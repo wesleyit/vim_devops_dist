@@ -21,7 +21,7 @@ do
 done
 
 ## Now it is time to install the custom fonts
-[ -e ~/.fonts ] && mkdir ~/.fonts
+[ -e ~/.fonts ] || mkdir ~/.fonts
 ln -s ~/.devops-vimfiles/vimfonts ~/.fonts/
 fc-cache -v | grep vimfonts
 
