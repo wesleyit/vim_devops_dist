@@ -38,4 +38,8 @@ alias vim='vim -u ~/.vimrc'
 
 EOF
 
+## Installing Vundle to download plugins
+git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/
+vim +PluginInstall +qall
+
 echo 'Vimfiles installed. Enjoy!'
