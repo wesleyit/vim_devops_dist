@@ -6,39 +6,55 @@
 # Author: Wesley Rodrigues da Silva <wesley.it@gmail.com>
 #####################################################################
 
-## Define the timestamp
+## Define a timestamp
 TIMESTAMP="$(date +'%Y%m%d_%H-%M-%S')"
+LINE="\n-------------------------------------------------\n\n"
 
-## Clone the main repo
+clear 
+echo "[ $TIMESTAMP ] Starting DevOps Vim Installer"
+echo -e "$LINE"
+
+
+echo Cloning vimfiles from Github Repository:
 [ -e ~/.devops-vimfiles ] && mv ~/.devops-vimfiles ~/.devops-vimfiles-bkp-$TIMESTAMP
 git clone https://github.com/wesleyit/devops-vimfiles ~/.devops-vimfiles
+echo -e "$LINE"
 
-## Lets create symbolic links for vim. Backups will be generated for existing files.
+
+echo Creating the vimrc and vim links:
 for target in .vim .vimrc
 do
     [ -e ~/$target ] && mv ~/$target ~/$target-bkp-$TIMESTAMP
     ln -s ~/.devops-vimfiles/$target ~/$target
 done
+echo -e "$LINE"
 
-## Now it is time to install the custom fonts
+
+echo Installing custom fonts:
 [ -e ~/.fonts ] || mkdir ~/.fonts
 ln -s ~/.devops-vimfiles/vimfonts ~/.fonts/
 fc-cache -v | grep vimfonts
+echo -e "$LINE"
 
-## Creating shortcut
+
+echo Creating shortcut:
 [ -e ~/.local/share/applications/vim.desktop ] && rm -rf ~/.local/share/applications/vim.desktop
 ln -s ~/.devops-vimfiles/.vim/vim.desktop ~/.local/share/applications/
+echo -e "$LINE"
 
-## creating alias in bashrc
+
+echo Creating alias for vim in bashrc:
 alias | grep -q vim || cat >> ~/.bashrc << EOF
 
 ## vim must ignore global vimrc
 alias vim='vim -u ~/.vimrc'
 
 EOF
+echo -e "$LINE"
 
-## Installing Vundle to download plugins
+echo Installing Vundle to download plugins:
 git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+echo -e "$LINE"
 
 echo 'Vimfiles installed. Enjoy!'
