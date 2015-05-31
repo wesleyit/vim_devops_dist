@@ -53,6 +53,8 @@ source $HOME/.vim/nerdtree.conf
 " ControlP
 source $HOME/.vim/ctrp.conf
 
+" Custom Skel Files
+source $HOME/.vim/template-skel.conf
 
 
 
