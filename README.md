@@ -8,6 +8,6 @@ Vim is powerful. It has a lot of plugins and customization possibilities. What i
 
 To install, open a terminal and run:
 
-curl https://raw.githubusercontent.com/wesleyit/devops-vimfiles/master/installer.sh | bash
+`curl https://raw.githubusercontent.com/wesleyit/devops-vimfiles/master/installer.sh | bash`
 
 You need to have curl and git installed, ok?
