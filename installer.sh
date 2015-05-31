@@ -30,8 +30,7 @@ fc-cache -v | grep vimfonts
 ln -s ~/.devops-vimfiles/.vim/vim.desktop ~/.local/share/applications/
 
 ## creating alias in bashrc
-alias | grep -q vim ||
-cat >> ~/.bashrc << EOF
+alias | grep -q vim || cat >> ~/.bashrc << EOF
 
 ## vim must ignore global vimrc
 alias vim='vim -u ~/.vimrc'
@@ -39,7 +38,7 @@ alias vim='vim -u ~/.vimrc'
 EOF
 
 ## Installing Vundle to download plugins
-git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/
+git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/Vundle
 vim +PluginInstall +qall
 
 echo 'Vimfiles installed. Enjoy!'
