@@ -54,7 +54,7 @@ echo -e "$LINE"
 
 echo Installing Vundle to download plugins:
 git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+vim +PluginInstall +qall 2> /dev/null
 echo -e "$LINE"
 
 echo 'Vimfiles installed. Enjoy!'
