@@ -31,8 +31,8 @@ echo -e "$LINE"
 
 
 echo Installing custom fonts:
-[ -e ~/.fonts ] || mkdir ~/.fonts
-ln -s ~/.devops-vimfiles/vimfonts ~/.fonts/
+[ -e ~/.fonts/devops-vim ] || mkdir -p ~/.fonts/devops-vim
+ln -s ~/.devops-vimfiles/vimfonts ~/.fonts/devops-vim/
 fc-cache -v | grep vimfonts
 echo -e "$LINE"
 
