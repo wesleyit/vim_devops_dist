@@ -6,4 +6,18 @@
 # vim: ft=ansible
 # -----------------------------------------------
 
+## For each set of hosts, you should create a new block 
+# like the code below. Change this comment to explain 
+# what your code actually does.
+- hosts: all
+  vars: 
+  remote_user: root
+  sudo: no
+  
+  tasks:
+  - name:
+
+  handlers: 
+  - name:
+
 
