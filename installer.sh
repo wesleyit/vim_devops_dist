@@ -59,8 +59,8 @@ vim +PluginInstall +qall 2> /dev/null
 echo -e "$LINE"
 
 echo Customizing the templates
-NAME=$(grep name ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)
-MAIL=$(grep mail ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)
+NAME="$(grep name ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)"
+MAIL="$(grep mail ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)"
 if [ -z "$NAME" -o -z "$MAIL" ]
 then
 	echo "I am not able to guess your name and e-mail."
