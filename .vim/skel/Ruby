@@ -1,10 +1,11 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby 
 #####################################################################
 # encoding: utf-8
+# vim: ft=ruby 
 # Program: 
 # Description:
 #
-# Author: Wesley Rodrigues da Silva <wesley.it@gmail.com>
+# Author: NAME <MAIL>
 #####################################################################
 
 

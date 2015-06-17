@@ -7,7 +7,7 @@
 FROM some-linux:latest
 
 # File Author / Maintainer
-MAINTAINER Wesley Rodrigues da Silva <wesley.it@gmail.com>
+MAINTAINER NAME <MAIL>
 
 # Send a local file to container
 ADD includes/mycommand.sh /some/place/in/container

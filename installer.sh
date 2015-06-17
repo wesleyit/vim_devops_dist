@@ -58,4 +58,19 @@ git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/Vu
 vim +PluginInstall +qall 2> /dev/null
 echo -e "$LINE"
 
+echo Customizing the templates
+NAME=$(grep name ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)
+MAIL=$(grep mail ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)
+if [ -z "$NAME" -o -z "$MAIL" ]
+then
+	echo "I am not able to guess your name and e-mail."
+	echo "Please, personalize this information in ~/.vim/skel/*."
+else
+	for file in ~/.vim/skel/*
+	do 
+		sed -i "s/NAME/$NAME/g" "$file" 
+		sed -i "s/MAIL/$MAIL/g" "$file" 
+	done
+fi
+
 echo 'Vimfiles installed. Enjoy!'
