@@ -10,7 +10,7 @@
 TIMESTAMP="$(date +'%Y%m%d_%H-%M-%S')"
 LINE="\n-------------------------------------------------\n\n"
 
-clear 
+clear
 echo "[ $TIMESTAMP ] Starting DevOps Vim Installer"
 echo -e "$LINE"
 
@@ -63,14 +63,14 @@ NAME="$(grep name ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)"
 MAIL="$(grep mail ~/.gitconfig | cut -d "=" -f 2 | cut -b 2-)"
 if [ -z "$NAME" -o -z "$MAIL" ]
 then
-	echo "I am not able to guess your name and e-mail."
-	echo "Please, personalize this information in ~/.vim/skel/*."
+    echo "I am not able to guess your name and e-mail."
+    echo "Please, personalize this information in ~/.vim/skel/*."
 else
-	for file in ~/.vim/skel/*
-	do 
-		sed -i "s/NAME/$NAME/g" "$file" 
-		sed -i "s/MAIL/$MAIL/g" "$file" 
-	done
+    for file in ~/.vim/skel/*
+    do
+        sed -i "s/NAME/$NAME/g" "$file"
+        sed -i "s/MAIL/$MAIL/g" "$file"
+    done
 fi
 
 echo 'Vimfiles installed. Enjoy!'
