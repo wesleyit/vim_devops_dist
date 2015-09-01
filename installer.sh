@@ -17,7 +17,7 @@ echo -e "$LINE"
 
 echo Cloning vimfiles from Github Repository:
 [ -e ~/.devops-vimfiles ] && mv ~/.devops-vimfiles ~/.devops-vimfiles-bkp-$TIMESTAMP
-git clone https://github.com/wesleyit/devops-vimfiles ~/.devops-vimfiles
+git clone https://github.com/wesleyit/vim_devops_dist ~/.devops-vimfiles
 echo -e "$LINE"
 
 
