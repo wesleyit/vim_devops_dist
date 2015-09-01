@@ -16,5 +16,5 @@ apt-get install git curl vim-nox ruby ruby-dev python python-dev
 
 Then, run the following command to download and install this Vim setup:
 
-`curl https://raw.githubusercontent.com/wesleyit/devops-vimfiles/master/installer.sh | bash`
+`curl https://raw.githubusercontent.com/wesleyit/vim_devops_dist/master/installer.sh | bash`
 
