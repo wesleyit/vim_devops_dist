@@ -33,8 +33,6 @@ echo -e "$LINE"
 echo Installing custom fonts:
 [ -e ~/.fonts/devops-vim ] || mkdir -p ~/.fonts/devops-vim
 ln -s ~/.devops-vimfiles/vimfonts ~/.fonts/devops-vim/
-bash ~/.vim/bundle/fonts/install.sh
-fc-cache -v | grep vimfonts
 echo -e "$LINE"
 
 
@@ -56,6 +54,7 @@ echo -e "$LINE"
 echo Installing Vundle to download plugins:
 git clone https://github.com/gmarik/Vundle.vim ~/.devops-vimfiles/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall 2> /dev/null
+bash ~/.vim/bundle/fonts/install.sh
 echo -e "$LINE"
 
 echo Customizing the templates
