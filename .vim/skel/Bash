@@ -1,13 +1,7 @@
 #!/bin/bash
-#####################################################################
-# Program: 
-# Description:
-#
-# Author: NAME <MAIL>
-#####################################################################
 
-## Define the working directory and a timestamp
-WORK_DIR="$(dirname $0)"
-TIMESTAMP="$(date +'%Y%m%d_%H-%M-%S')"
-
+## Change to the dir where the script is located and
+# get the full name into a variable
+cd "$(dirname $0)"
+WORK_DIR="$(pwd)"
 

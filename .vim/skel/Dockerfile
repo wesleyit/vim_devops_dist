@@ -1,37 +1,13 @@
-############################################################
-# SET HERE YOUR TITLE
-# and here you put a little description
-############################################################
+## This is a sample Dockerfile
 
-# Image used as base skeleton
-FROM some-linux:latest
-
-# File Author / Maintainer
-MAINTAINER NAME <MAIL>
-
-# Send a local file to container
-ADD includes/mycommand.sh /some/place/in/container
-
-# Set an environment variable
+FROM debian:jessie
+MAINTAINER Wesley R. Silva <wesley.it@gmail.com>
+ADD my_app.sh /my_app.sh
 ENV LANG en.us_utf-8
-
-# Define a volume mount
 VOLUME /data
-
-# Change the user which will run the next commands
 USER someuser
-
-# Change the container directory
 WORKDIR /home/someuser
-
-# Run a command during build
-RUN ["mycommand.sh"]
-
-# Expose some port
+RUN bash -c "/my_app.sh"
 EXPOSE 27017
+CMD service xpto start
 
-# Pass a parameter to entrypoing command
-CMD ["--parameter XPTO"]
-
-# Set default container command
-ENTRYPOINT ["/usr/bin/command"]
